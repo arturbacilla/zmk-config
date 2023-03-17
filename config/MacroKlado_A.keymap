@@ -1,0 +1,35 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt_bindings/zmk/bt.h>
+#define DEFAULT 0
+#define LOWER   1
+#define RAISE   2
+/ {
+	keymap {
+		compatible = "zmk,keymap";
+		
+		default_layer {
+			bindings = <
+				&kp LSHIFT 	&lt RAISE Q	&kp W	&kp R
+				&kp LCTRL	&kp LALT	&kp D	&kp SPACE
+				&lt LOWER LC(Z)
+			>;
+		};
+		
+		lower_layer {
+			bindings = <
+				&kp ESC	&kp B	&kp N	&kp LC(T)
+				&none	&kp C	&kp V	&kp F
+				&trans
+			>;
+		};
+		
+		raise_layer {
+			bindings = <
+				&kp LGUI	&trans	&kp ENTER	&kp BACKSPACE
+				&bt BT_CLR	&bt BT_SEL 0	&bt BT_SEL 1	&bt BT_CLR 2
+				&none
+			>;
+		};
+	};
+};

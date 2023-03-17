@@ -1,0 +1,6 @@
+if SHIELD_MACROKLADO
+
+config ZMK_KEYBOARD_NAME
+	default "MacroKlado_A"
+	
+endif
